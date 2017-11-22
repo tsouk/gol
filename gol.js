@@ -7,21 +7,21 @@ newArray = (size) => {
     return result;
 }
 
-padArray = (image, fat) => {
-  result = newArray(image.length + fat * 2);
+padArray = (originalArray, fat) => {
+  result = newArray(originalArray.length + fat * 2);
 
   for (var i = 0; i < fat; i++) {
     result[i].fill(0);
-    result[image.length + fat + i].fill(0);
+    result[originalArray.length + fat + i].fill(0);
   }
 
-  for (var i = 0; i < image.length; i++) {
-    var imageRow = image[i].slice(); // clones the array
+  for (var i = 0; i < originalArray.length; i++) {
+    var originalArrayRow = originalArray[i].slice(); // clones the array
     for (var j = 0; j < fat; j++ ){
-      imageRow.push(0);
-      imageRow.unshift(0);
+      originalArrayRow.push(0);
+      originalArrayRow.unshift(0);
     }
-    result[i+fat] = imageRow;
+    result[i+fat] = originalArrayRow;
   }
 
   return result;
