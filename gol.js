@@ -1,4 +1,4 @@
-function newArray(size){
+newArray = (size) => {
     var result = new Array(size);
     for (var i = 0; i < size; i++) {
         result[i] = new Array(size);
@@ -7,7 +7,7 @@ function newArray(size){
     return result;
 }
 
-function padArray(image, fat) {
+padArray = (image, fat) => {
   result = newArray(image.length + fat * 2);
 
   for (var i = 0; i < fat; i++) {
@@ -27,7 +27,7 @@ function padArray(image, fat) {
   return result;
 }
 
-function convolveArrays(filter, image){
+convolveArrays = (filter, image) => {
   var result = newArray(image.length - filter.length + 1); // padding!
 
   for (var i = 0; i < image.length; i++) {
