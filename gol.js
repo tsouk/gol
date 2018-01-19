@@ -32,12 +32,14 @@ convolveArrays = (filter, image) => {
 
   for (var i = 0; i < image.length; i++) {
     var imageRow = image[i];
+    //for every row
     for (var j = 0; j <= imageRow.length; j++) {
       // for every cell
 
       var sum = 0;
       for (var w = 0; w < filter.length; w++) {
         if(image.length - i < filter.length) break; // padding!
+        // for every filter row, for rows that completely fill the filter
 
         var filterRow = filter[w];
         for (var z = 0; z < filter.length; z++) {
